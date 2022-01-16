@@ -13,9 +13,13 @@ import (
 )
 
 func isAccepted(acceptScript string, nodePubKey []byte, amt uint64) (bool, string) {
+	log.Printf("emnvn isAccepted nid: %x, amt: %v, script: %s", nodePubKey, amt, acceptScript)
+	return true, ""
+}
+func isAccepted1(acceptScript string, nodePubKey []byte, amt uint64) (bool, string) {
 	log.Printf("isAccepted nid: %x, amt: %v, script: %s", nodePubKey, amt, acceptScript)
 	if len(acceptScript) == 0 {
-		return false, "Internal error"
+		return false, "Internal error 1"
 	}
 
 	//var value starlark.Value
